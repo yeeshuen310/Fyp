@@ -1,7 +1,13 @@
+<?php
+
+include 'database.php';
+
+?>
+
 <!DOCTYPE HTML>
 <html>
 	<head>
-	<title>Footwear - Free Bootstrap 4 Template by Colorlib</title>
+	<title>User Home</title>
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -42,7 +48,7 @@
     if (!$connect) {
         die("Connection failed: " . mysqli_connect_error());
     }
-	?>
+	?>	
 	<div class="colorlib-loader"></div>
 
 	<div id="page">
@@ -51,7 +57,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-7 col-md-9">
-							<div id="colorlib-logo"><a href="index.html">4M Online Sport Shoe Store</a></div>
+							<div id="colorlib-logo"><a href="http://localhost/fyp/user_home_page.php">4M Online Sport Shoe Store</a></div>
 						</div>
 						<div class="col-sm-5 col-md-3">
 			            <form action="#" class="search-wrap">
@@ -65,7 +71,7 @@
 					<div class="row">
 						<div class="col-sm-12 text-left menu-1">
 							<ul>
-								<li class="active"><a href="index.html">Home</a></li>
+								<li class="active"><a href="http://localhost/fyp/men.php">Home</a></li>
 								<li class="has-dropdown">
 									<a href="http://localhost/fyp/men.php">Men</a>
 									<ul class="dropdown">
@@ -76,9 +82,15 @@
 										<li><a href="add-to-wishlist.html">Wishlist</a></li>
 									</ul>
 								</li>
-								<li><a href="women.html">Women</a></li>
-								<li><a href="about.html">About</a></li>
+								<li><a href="http://localhost/fyp/women.php">Women</a></li>
+								<li><a href="http://localhost/fyp/about.php">About</a></li>
 								<li><a href="contact.html">Contact</a></li>
+                                <li class="has-dropdown">
+									<a href="#">Account</a>
+									<ul class="dropdown">
+										<li><a href="profile.php">Edit Profile</a></li>
+                                        <li><a href="logout.php">Logout</a></li>
+									</ul>
 								<li class="cart"><a href="cart.html"><i class="icon-shopping-cart"></i> Cart [0]</a></li>
 							</ul>
 						</div>
@@ -182,17 +194,17 @@
 				<div class="row">
 					<div class="col-sm-6 text-center">
 						<div class="featured">
-							<a href="#" class="featured-img" style="background-image: url(images/men.jpg);"></a>
+							<a href="http://localhost/fyp/men.php" class="featured-img" style="background-image: url(images/men.jpg);"></a>
 							<div class="desc">
-								<h2><a href="#">Shop Men's Collection</a></h2>
+								<h2><a href="http://localhost/fyp/men.php">Shop Men's Collection</a></h2>
 							</div>
 						</div>
 					</div>
 					<div class="col-sm-6 text-center">
 						<div class="featured">
-							<a href="#" class="featured-img" style="background-image: url(images/women.jpg);"></a>
+							<a href="http://localhost/fyp/women.php" class="featured-img" style="background-image: url(images/women.jpg);"></a>
 							<div class="desc">
-								<h2><a href="#">Shop Women's Collection</a></h2>
+								<h2><a href="http://localhost/fyp/women.php">Shop Women's Collection</a></h2>
 							</div>
 						</div>
 					</div>
@@ -203,17 +215,12 @@
 		<div class="colorlib-product">
 			<div class="container">
 				<div class="row">
-				
-				</div>
-				<div class="colorlib-product">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-8 offset-sm-2 text-center colorlib-heading colorlib-heading-sm">
-						<h2>View All Products</h2>
+					<div class="col-sm-8 offset-sm-2 text-center colorlib-heading">
+						<h2>View All Product</h2>
 					</div>
 				</div>
-				
 				<?php 
+				
 $select_query = "SELECT * FROM product";
 $result = mysqli_query($connect, $select_query);
 ?>
