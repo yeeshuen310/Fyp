@@ -1,13 +1,3 @@
-<?php
-
-include 'database.php';
-session_start();
-if(isset($_SESSION['username'])) {
-    $username = $_SESSION['username'];
-    echo "<div style='font-size: 20px; padding: 10px; color:green;'>Welcome, $username!</div>";
-}
-?>
-
 <!DOCTYPE HTML>
 <html>
 	<head>
