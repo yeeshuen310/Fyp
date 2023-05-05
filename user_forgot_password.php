@@ -91,18 +91,20 @@ if(isset($_POST['submit']))
 </head>
 <style>
   
-  form
-   {
-      width:65%;
+   .forgot-form {
       margin: 0 auto;
       max-width: 500px;
+   }
+   form
+   {
+      width:65%;
    }
    h1
    {
       margin-top:10px;
       margin-bottom:50px;
    }
-   .reset-container
+   .forgot-container
    {
       width: 100%;
     height: 100%;
@@ -110,12 +112,12 @@ if(isset($_POST['submit']))
     padding: 15px 20px;
     font-size: 1rem;
     border-radius: 30px;
-    margin-bottom:30px;
     background: transparent;
     outline: none;
+    margin-bottom:20px;
     transition: .3s;
    }
-   .reset-btn
+   .forgot-btn
    {
     display: inline-block;
     background:#3fff7f;
@@ -127,17 +129,11 @@ if(isset($_POST['submit']))
     text-align:center;
     width:250px;
    }
-   .reset-btn:hover
+   .forgot-btn:hover
    {
       background: #006b24;
    }
-   /*------Validation------*/
-  
-   .password-container {
-  		position: relative;
-		
-		}
-    
+   
 </style>
 <body>
    
@@ -149,7 +145,7 @@ if(isset($_POST['submit']))
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-7 col-md-9">
-							<div id="colorlib-logo"><a href="home.html">4M Online Sport Shoes Store</a></div>
+							<div id="colorlib-logo"><a href="home.html">4M Online Sport Shoe Store</a></div>
 						</div>
 						<div class="col-sm-5 col-md-3">
 			            <form action="#" class="search-wrap">
@@ -162,17 +158,25 @@ if(isset($_POST['submit']))
 							<ul>
 								<li class="active"><a href="home.html">Home</a></li>
 								<li class="has-dropdown">
-									<a href="men.html">Men</a>
+									<a href="http://localhost/fyp/men.php">Men</a>
 									<ul class="dropdown">
-										<li><a href="product-detail.html">Product Detail</a></li>
-										<li><a href="cart.html">Shopping Cart</a></li>
-										<li><a href="checkout.html">Checkout</a></li>
-										<li><a href="order-complete.html">Order Complete</a></li>
-										<li><a href="add-to-wishlist.html">Wishlist</a></li>
+										<li><a href="#">Running Shoes</a></li>
+										<li><a href="#">Basektball Shoes</a></li>
+										<li><a href="#">Badminton Shoes</a></li>
+									
 									</ul>
 								</li>
-								<li><a href="women.html">Women</a></li>
-								<li><a href="about.html">About</a></li>
+								<li class="has-dropdown">
+									<a href="http://localhost/fyp/women.php">Women</a>
+									<ul class="dropdown">
+										<li><a href="#">Running Shoes</a></li>
+										<li><a href="#">Basektball Shoes</a></li>
+										<li><a href="#">Badminton Shoes</a></li>
+									
+									</ul>
+								</li>
+							
+								<li><a href="http://localhost/fyp/about.php">About</a></li>
 								<li><a href="contact.html">Contact</a></li>
 								
 							</ul>
@@ -181,9 +185,7 @@ if(isset($_POST['submit']))
 				</div>
 			</div>
 
- 
-			<div class="register-container">
-	<form action="" method="POST" class="login-email">
+   <form action=""class="forgot-form" method="post">
       <h1 style="color:black;">Forgot Password</h1>
       <?php
       if(isset($error)){
@@ -191,21 +193,21 @@ if(isset($_POST['submit']))
       };
       ?>
    
-      <input type="email" name="email" required placeholder="Enter your email" class="reset-container" >
+      <input type="email" name="email" required placeholder="Enter your email" class="forgot-container" >
       <br>
       <br>
-      <select name="question" required class="reset-container">
+      <select name="question" required class="forgot-container">
           <option value="">Select a security question</option>
           <?php foreach ($questions as $q) { ?>
           <option value="<?php echo $q ?>"><?php echo $q ?></option>
           <?php } ?>
       </select>
       <br><br>
-      <input type="text" name="answer" required placeholder="Enter your answer" class="reset-container">
+      <input type="text" name="answer" required placeholder="Enter your answer" class="forgot-container">
       <br>
       <br>
       
-      <input type="submit" name="submit" value="Submit" class="reset-btn">
+      <input type="submit" name="submit" value="Submit" class="forgot-btn">
 			
    </form>
  
