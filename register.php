@@ -321,7 +321,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 				var pass =document.getElementById("password");
 				var msg =document.getElementById("message");
 				var str =document.getElementById("strenght");
-
+				var uppercaseRegex = /[A-Z]/;
+                var punctuationRegex = /[!"#$%&'()*+,-./:;<=>?@[\\\]^_`{|}~]/;
 				pass.addEventListener('input',() => {
 					if(pass.value.length  > 0){
 						
@@ -335,16 +336,17 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 						pass.style.bordercolor="#ff5925";
 						msg.style.color="#ff5925";
 					}
-					else if(pass.value.length >= 4 && pass.value.length <8){
+					else if(pass.value.length >= 4 && pass.value.length <8 && uppercaseRegex.test(pass.value)){
 						str.innerHTML = "medium";
 						pass.style.bordercolor="gold";
 						msg.style.color="gold";
 					}
-					else if(pass.value.length >= 8){
-						str.innerHTML ="strong";
-						pass.style.bordercolor="#26d730";
-						msg.style.color="#26d730";
-					}
+					else if (pass.value.length >=8 && uppercaseRegex.test(pass.value) && punctuationRegex.test(pass.value)) {
+					str.innerHTML ="strong";
+					pass.style.bordercolor="#26d730";
+					msg.style.color="#26d730";
+				}
+					
 				})
 
 				</script>
