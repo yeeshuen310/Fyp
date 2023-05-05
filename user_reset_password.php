@@ -10,9 +10,9 @@ if(isset($_POST['submit']))
    if($password != $confirm_password){
       $error = 'Passwords do not match!';
    }else {
-      $update = "UPDATE fyp.users SET password = '".md5($password)."' WHERE email = '$email'";
+      $update = "UPDATE project.users SET password = '".md5($password)."' WHERE email = '$email'";
       mysqli_query($connect, $update);
-      echo '<script>alert("Your password has been reset!");window.location.href="login.php";</script>';
+      echo '<script>alert("Your password has been reset!");window.location.href="welcome.php";</script>';
    }
   
 }
@@ -107,12 +107,7 @@ if (isset($_GET['email'])) {
    {
       background: #006b24;
    }
-   /*------Validation------*/
   
-   .password-container {
-  		position: relative;
-		
-		}
     
   </style>
 <body>
@@ -125,7 +120,7 @@ if (isset($_GET['email'])) {
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-7 col-md-9">
-							<div id="colorlib-logo"><a href="home.html">4M Online Sport Shoes Store</a></div>
+							<div id="colorlib-logo"><a href="home.html">4M Online Sport Shoe Store</a></div>
 						</div>
 						<div class="col-sm-5 col-md-3">
 			            <form action="#" class="search-wrap">
@@ -138,17 +133,25 @@ if (isset($_GET['email'])) {
 							<ul>
 								<li class="active"><a href="home.html">Home</a></li>
 								<li class="has-dropdown">
-									<a href="men.html">Men</a>
+									<a href="http://localhost/fyp/men.php">Men</a>
 									<ul class="dropdown">
-										<li><a href="product-detail.html">Product Detail</a></li>
-										<li><a href="cart.html">Shopping Cart</a></li>
-										<li><a href="checkout.html">Checkout</a></li>
-										<li><a href="order-complete.html">Order Complete</a></li>
-										<li><a href="add-to-wishlist.html">Wishlist</a></li>
+										<li><a href="#">Running Shoes</a></li>
+										<li><a href="#">Basektball Shoes</a></li>
+										<li><a href="#">Badminton Shoes</a></li>
+									
 									</ul>
 								</li>
-								<li><a href="women.html">Women</a></li>
-								<li><a href="about.html">About</a></li>
+								<li class="has-dropdown">
+									<a href="http://localhost/fyp/women.php">Women</a>
+									<ul class="dropdown">
+										<li><a href="#">Running Shoes</a></li>
+										<li><a href="#">Basektball Shoes</a></li>
+										<li><a href="#">Badminton Shoes</a></li>
+									
+									</ul>
+								</li>
+							
+								<li><a href="http://localhost/fyp/about.php">About</a></li>
 								<li><a href="contact.html">Contact</a></li>
 								
 							</ul>
@@ -157,9 +160,8 @@ if (isset($_GET['email'])) {
 				</div>
 			</div>
 
-	<div class="register-container">
-	<form action="" method="POST" class="login-email">
-
+   
+   <form action="" method="post">
       <h1>Reset Password</h1>
    
       <?php
@@ -167,15 +169,19 @@ if (isset($_GET['email'])) {
          echo '<span class="error-msg">'.$error.'</span>';
       };
       ?>
-      <input type="email" name="email" class="reset-container"value="<?php echo $email ?>">
+      <input type="hidden" name="email" value="<?php echo $email ?>">
+      <br>
+      <br>
+  
+      <input type="password" name="password" required placeholder="Enter new password"class="reset-container" >
+      <span class="hide-icon"></span>
+      <p id="message" style="display:none;" >Password is <span id="strenght"></span></p>
+      <br>
+      <br>
      
-	 
-      <input type="password" name="password"  id="password" required placeholder="Enter new password"class="reset-container" >
-	  
-	  <p id="message" style="display:none; margin-left:30px; margin-top:-20px;" >Password is <span id="strenght"></span></p>
-
-
       <input type="password" name="cpassword" required placeholder="Confirm new password"class="reset-container">
+      <span class="hide-icon"></i></span>
+      <br>
       <br>
       <input type="submit" name="submit" value="Submit" class="reset-btn">
    </form>
@@ -318,7 +324,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	<script src="js/jquery.stellar.min.js"></script>
 	<!-- Main -->
 	<script src="js/main.js"></script>
-	
 
 </body>
 </html>
