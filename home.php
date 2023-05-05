@@ -67,20 +67,28 @@
 							<ul>
 								<li class="active"><a href="http://localhost/fyp/men.php">Home</a></li>
 								<li class="has-dropdown">
+									
+									<li class="has-dropdown">
 									<a href="http://localhost/fyp/men.php">Men</a>
 									<ul class="dropdown">
-										<li><a href="product-detail.html">Product Detail</a></li>
-										<li><a href="cart.html">Shopping Cart</a></li>
-										<li><a href="checkout.html">Checkout</a></li>
-										<li><a href="order-complete.html">Order Complete</a></li>
-										<li><a href="add-to-wishlist.html">Wishlist</a></li>
+										<li><a href="#">Running Shoes</a></li>
+										<li><a href="#">Basektball Shoes</a></li>
+										<li><a href="#">Badminton Shoes</a></li>
+									
 									</ul>
 								</li>
-								<li><a href="http://localhost/fyp/women.php">Women</a></li>
+								<li class="has-dropdown">
+									<a href="http://localhost/fyp/women.php">Women</a>
+									<ul class="dropdown">
+										<li><a href="#">Running Shoes</a></li>
+										<li><a href="#">Basektball Shoes</a></li>
+										<li><a href="#">Badminton Shoes</a></li>
+									
+									</ul>
 								<li><a href="http://localhost/fyp/about.php">About</a></li>
 								<li><a href="contact.html">Contact</a></li>
-                                <li><a href="login.php">Login/Sign Up</a></li>
-								<li class="cart"><a href="cart.html"><i class="icon-shopping-cart"></i> Cart [0]</a></li>
+                                <li><a href="login.php">Login</a></li>
+								<li class="cart"><a href="http://localhost/fyp/cart.php#"><i class="icon-shopping-cart"></i> 0</a></li>
 							</ul>
 						</div>
 					</div>
@@ -94,13 +102,12 @@
 								<div class="owl-carousel2">
 									<div class="item">
 										<div class="col">
-											<h3><a href="#">25% off (Almost) Everything! Use Code: Summer Sale</a></h3>
+										<h3><a href="#">Welcome to 4M Online Sport Shoe Store</a></h3>
 										</div>
 									</div>
 									<div class="item">
 										<div class="col">
-											<h3><a href="#">Our biggest sale yet 50% off all summer shoes</a></h3>
-										</div>
+											<h3><a href="#">Let's start a great shopping trip together !</a></h3>
 									</div>
 								</div>
 							</div>
@@ -123,7 +130,7 @@
 					   					<h2 class="head-2">Shoes</h2>
 					   					<h2 class="head-3">Collection</h2>
 					   					<p class="category"><span>New trending shoes</span></p>
-					   					<p><a href="#" class="btn btn-primary">Shop Collection</a></p>
+					   					<p><a href="http://localhost/fyp/men.php" class="btn btn-primary">Shop Collection</a></p>
 				   					</div>
 				   				</div>
 				   			</div>
@@ -155,11 +162,11 @@
 				   			<div class="col-sm-6 offset-sm-3 text-center slider-text">
 				   				<div class="slider-text-inner">
 				   					<div class="desc">
-					   					<h1 class="head-1">New</h1>
-					   					<h2 class="head-2">Arrival</h2>
-					   					<h2 class="head-3">up to <strong class="font-weight-bold">30%</strong> off</h2>
-					   					<p class="category"><span>New stylish shoes for men</span></p>
-					   					<p><a href="#" class="btn btn-primary">Shop Collection</a></p>
+					   				<h1 class="head-1">Women's</h1>
+					   					<h2 class="head-2">Shoes</h2>
+					   					<h2 class="head-3">Collection</h2>
+					   					<p class="category"><span>New trending shoes</span></p>
+					   					<p><a href="http://localhost/fyp/women.php" class="btn btn-primary">Shop Collection</a></p>
 				   					</div>
 				   				</div>
 				   			</div>
