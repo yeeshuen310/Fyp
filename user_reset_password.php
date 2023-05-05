@@ -10,9 +10,9 @@ if(isset($_POST['submit']))
    if($password != $confirm_password){
       $error = 'Passwords do not match!';
    }else {
-      $update = "UPDATE project.users SET password = '".md5($password)."' WHERE email = '$email'";
+      $update = "UPDATE fyp.users SET password = '".md5($password)."' WHERE email = '$email'";
       mysqli_query($connect, $update);
-      echo '<script>alert("Your password has been reset!");window.location.href="welcome.php";</script>';
+      echo '<script>alert("Your password has been reset!");window.location.href="login.php";</script>';
    }
   
 }
@@ -107,7 +107,12 @@ if (isset($_GET['email'])) {
    {
       background: #006b24;
    }
+   /*------Validation------*/
   
+   .password-container {
+  		position: relative;
+		
+		}
     
   </style>
 <body>
@@ -120,7 +125,7 @@ if (isset($_GET['email'])) {
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-7 col-md-9">
-							<div id="colorlib-logo"><a href="http://localhost/fyp/home.php">4M Online Sport Shoe Store</a></div>
+							<div id="colorlib-logo"><a href="home.html">4M Online Sport Shoes Store</a></div>
 						</div>
 						<div class="col-sm-5 col-md-3">
 			            <form action="#" class="search-wrap">
@@ -131,27 +136,19 @@ if (isset($_GET['email'])) {
 					<div class="row">
 						<div class="col-sm-12 text-left menu-1">
 							<ul>
-								<li class="active"><a href="http://localhost/fyp/home.php">Home</a></li>
+								<li class="active"><a href="home.html">Home</a></li>
 								<li class="has-dropdown">
-									<a href="http://localhost/fyp/men.php">Men</a>
+									<a href="men.html">Men</a>
 									<ul class="dropdown">
-										<li><a href="#">Running Shoes</a></li>
-										<li><a href="#">Basektball Shoes</a></li>
-										<li><a href="#">Badminton Shoes</a></li>
-									
+										<li><a href="product-detail.html">Product Detail</a></li>
+										<li><a href="cart.html">Shopping Cart</a></li>
+										<li><a href="checkout.html">Checkout</a></li>
+										<li><a href="order-complete.html">Order Complete</a></li>
+										<li><a href="add-to-wishlist.html">Wishlist</a></li>
 									</ul>
 								</li>
-								<li class="has-dropdown">
-									<a href="http://localhost/fyp/women.php">Women</a>
-									<ul class="dropdown">
-										<li><a href="#">Running Shoes</a></li>
-										<li><a href="#">Basektball Shoes</a></li>
-										<li><a href="#">Badminton Shoes</a></li>
-									
-									</ul>
-								</li>
-							
-								<li><a href="http://localhost/fyp/about.php">About</a></li>
+								<li><a href="women.html">Women</a></li>
+								<li><a href="about.html">About</a></li>
 								<li><a href="contact.html">Contact</a></li>
 								
 							</ul>
@@ -160,8 +157,9 @@ if (isset($_GET['email'])) {
 				</div>
 			</div>
 
-   
-   <form action="" method="post">
+	<div class="register-container">
+	<form action="" method="POST" class="login-email">
+
       <h1>Reset Password</h1>
    
       <?php
@@ -169,19 +167,15 @@ if (isset($_GET['email'])) {
          echo '<span class="error-msg">'.$error.'</span>';
       };
       ?>
-      <input type="hidden" name="email" value="<?php echo $email ?>">
-      <br>
-      <br>
-  
-      <input type="password" name="password" required placeholder="Enter new password"class="reset-container" >
-      <span class="hide-icon"></span>
-      <p id="message" style="display:none;" >Password is <span id="strenght"></span></p>
-      <br>
-      <br>
+      <input type="email" name="email" class="reset-container"value="<?php echo $email ?>">
      
+	 
+      <input type="password" name="password"  id="password" required placeholder="Enter new password"class="reset-container" >
+	  
+	  <p id="message" style="display:none; margin-left:30px; margin-top:-20px;" >Password is <span id="strenght"></span></p>
+
+
       <input type="password" name="cpassword" required placeholder="Confirm new password"class="reset-container">
-      <span class="hide-icon"></i></span>
-      <br>
       <br>
       <input type="submit" name="submit" value="Submit" class="reset-btn">
    </form>
@@ -270,11 +264,12 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	</div>
 	
 	
-    <script>
+	<script>
 				var pass =document.getElementById("password");
 				var msg =document.getElementById("message");
 				var str =document.getElementById("strenght");
-
+				var uppercaseRegex = /[A-Z]/;
+                var punctuationRegex = /[!"#$%&'()*+,-./:;<=>?@[\\\]^_`{|}~]/;
 				pass.addEventListener('input',() => {
 					if(pass.value.length  > 0){
 						
@@ -288,16 +283,17 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 						pass.style.bordercolor="#ff5925";
 						msg.style.color="#ff5925";
 					}
-					else if(pass.value.length >= 4 && pass.value.length <8){
+					else if(pass.value.length >= 4 && pass.value.length <8 && uppercaseRegex.test(pass.value)){
 						str.innerHTML = "medium";
 						pass.style.bordercolor="gold";
 						msg.style.color="gold";
 					}
-					else if(pass.value.length >= 8){
-						str.innerHTML ="strong";
-						pass.style.bordercolor="#26d730";
-						msg.style.color="#26d730";
-					}
+					else if (pass.value.length >=8 && uppercaseRegex.test(pass.value) && punctuationRegex.test(pass.value)) {
+					str.innerHTML ="strong";
+					pass.style.bordercolor="#26d730";
+					msg.style.color="#26d730";
+				}
+					
 				})
 
 				</script>
@@ -324,6 +320,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	<script src="js/jquery.stellar.min.js"></script>
 	<!-- Main -->
 	<script src="js/main.js"></script>
+	
 
 </body>
 </html>
