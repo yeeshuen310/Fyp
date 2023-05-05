@@ -125,7 +125,7 @@ if (isset($_GET['email'])) {
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-7 col-md-9">
-							<div id="colorlib-logo"><a href="home.html">4M Online Sport Shoes Store</a></div>
+							<div id="colorlib-logo"><a href="home.php">4M Online Sport Shoes Store</a></div>
 						</div>
 						<div class="col-sm-5 col-md-3">
 			            <form action="#" class="search-wrap">
@@ -136,19 +136,27 @@ if (isset($_GET['email'])) {
 					<div class="row">
 						<div class="col-sm-12 text-left menu-1">
 							<ul>
-								<li class="active"><a href="home.html">Home</a></li>
+								<li class="active"><a href="home.php">Home</a></li>
 								<li class="has-dropdown">
-									<a href="men.html">Men</a>
+									<a href="http://localhost/fyp/men.php">Men</a>
 									<ul class="dropdown">
-										<li><a href="product-detail.html">Product Detail</a></li>
-										<li><a href="cart.html">Shopping Cart</a></li>
-										<li><a href="checkout.html">Checkout</a></li>
-										<li><a href="order-complete.html">Order Complete</a></li>
-										<li><a href="add-to-wishlist.html">Wishlist</a></li>
+										<li><a href="#">Running Shoes</a></li>
+										<li><a href="#">Basektball Shoes</a></li>
+										<li><a href="#">Badminton Shoes</a></li>
+									
 									</ul>
 								</li>
-								<li><a href="women.html">Women</a></li>
-								<li><a href="about.html">About</a></li>
+								<li class="has-dropdown">
+									<a href="http://localhost/fyp/women.php">Women</a>
+									<ul class="dropdown">
+										<li><a href="#">Running Shoes</a></li>
+										<li><a href="#">Basektball Shoes</a></li>
+										<li><a href="#">Badminton Shoes</a></li>
+									
+									</ul>
+								</li>
+							
+								<li><a href="http://localhost/fyp/about.php">About</a></li>
 								<li><a href="contact.html">Contact</a></li>
 								
 							</ul>
