@@ -145,7 +145,7 @@ if(isset($_POST['submit']))
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-7 col-md-9">
-							<div id="colorlib-logo"><a href="home.html">4M Online Sport Shoe Store</a></div>
+							<div id="colorlib-logo"><a href="http://localhost/fyp/home.php">4M Online Sport Shoe Store</a></div>
 						</div>
 						<div class="col-sm-5 col-md-3">
 			            <form action="#" class="search-wrap">
@@ -156,7 +156,7 @@ if(isset($_POST['submit']))
 					<div class="row">
 						<div class="col-sm-12 text-left menu-1">
 							<ul>
-								<li class="active"><a href="home.html">Home</a></li>
+								<li class="active"><a href="http://localhost/fyp/home.php">Home</a></li>
 								<li class="has-dropdown">
 									<a href="http://localhost/fyp/men.php">Men</a>
 									<ul class="dropdown">
